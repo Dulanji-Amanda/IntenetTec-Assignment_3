@@ -1,121 +1,188 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exercise 1</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Case 1</title>
     <style>
         body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: white;
-        }
-        .container {
-            display: grid;
-            grid-template-rows: 1fr 1fr;
-            width: 100%;
-            height: 100%;
-            border: 2px solid black;
-            position: absolute;
-            grid-template-columns: repeat(2, 1fr);
-        }
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background: white;
+    overflow: hidden;
+}
+  
+.container {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    border: 2px solid black;
+}
+  
+.box {
+    width: 50%;
+    height: 50%;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+  
+.top-left {
+    background: red;
+    top: 0;
+    left: 0;
+}
 
-        .red { background-color: red; }
-        .green { background-color: green; }
-        .yellow { background-color: orange; }
-        .pink { background-color: hotpink; }
+.top-right {
+    background: green;
+    top: 0;
+    right: 0;
+}
 
-        .box {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: relative;
-        }
+.bottom-left {
+    background: orange;
+    bottom: 0;
+    left: 0;
+}
 
-        .circle {
-            width: 100px;
-            height: 100px;
-            background-color: white;
-            border-radius: 50%;
-            position: absolute;
-        }
+.bottom-right {
+    background: rgb(219, 54, 161);
+    bottom: 0;
+    right: 0;
+}
+  
+.circle {
+    width: 12vw;
+    height: 12vw;
+    background: white;
+    border-radius: 50%;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+  
+.square {
+    width: 5vw;
+    height: 5vw;
+    background: red;
+}
+  
+.center-box {
+    position: absolute;
+    width: 12vw;
+    height: 12vw;
+    background: white;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+  
+.center-circle {
+    width: 7vw;
+    height: 7vw;
+    background: red;
+    border-radius: 50%;
+}
+  
+.corner {
+    position: absolute;
+    width: 8vw;
+    height: 8vw;
+    background: white;
+    border-radius: 0 0 100% 0;
+}
+  
+.top-left .corner {
+    top: 0;
+    left: 0;
+    transform: rotate(0deg);
+}
+  
+.top-right .corner {
+    top: 0;
+    right: 0;
+    transform: rotate(90deg);
+}
 
-        .redbox {
-            width: 50px;
-            height: 50px;
-            background-color: red;
-            position: absolute;
-        }
+.bottom-left .corner {
+    bottom: 0;
+    left: 0;
+    transform: rotate(270deg);
+}
+  
+.bottom-right .corner {
+    bottom: 0;
+    right: 0;
+    transform: rotate(180deg);
+}
+  
+.middle-half-circle {
+    position: absolute;
+    width: 10vw;
+    height: 10vw;
+    background-color: white;
+    border-radius: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+  
+.top-middle-circle {
+    top: -5vw;
+}
 
-        .circles {
-            width: 100px;
-            height: 100px;
-            background-color: white;
-            border-radius: 50%;
-            position: absolute;
-        }
-
-        .center-box {
-            width: 100px;
-            height: 100px;
-            background-color: white;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-        }
-
-        .center-circle {
-            width: 50px;
-            height: 50px;
-            background-color: red;
-            border-radius: 50%;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-        }
-
-        .top-left { top: -40px; left: -40px; }
-        .top-right { top: -40px; right: -40px; }
-        .bottom-left { bottom: -40px; left: -40px; }
-        .bottom-right { bottom: -40px; right: -40px; }
-        .top-center { top: -50px; left: 50%;transform: translateX(-50%);}
-        .bottom-center { bottom: -50px; left: 50%; transform: translateX(-50%);}
+.bottom-middle-circle {
+    bottom: -5vw;
+}
     </style>
-</head>
-<body>
-    
+  </head>
+  <body>
     <div class="container">
-        <div class="red box">
-            <div class="circle"></div>
-            <div class="redbox"></div>
+      <div class="box top-left">
+        <div class="circle">
+          <div class="square"></div>
         </div>
-        <div class="green box">
-            <div class="circle"></div>
-            <div class="redbox"></div>
-        </div>
-        <div class="yellow box">
-            <div class="circle"></div>
-            <div class="redbox"></div>
-        </div>
-        <div class="pink box">
-            <div class="circle"></div>
-            <div class="redbox"></div>
-        </div>
+        <div class="corner"></div>
+      </div>
 
-        <div class="center-box"></div>
+      <div class="box top-right">
+        <div class="circle">
+          <div class="square"></div>
+        </div>
+        <div class="corner"></div>
+      </div>
+
+      <div class="box bottom-left">
+        <div class="circle">
+          <div class="square"></div>
+        </div>
+        <div class="corner"></div>
+      </div>
+
+      <div class="box bottom-right">
+        <div class="circle">
+          <div class="square"></div>
+        </div>
+        <div class="corner"></div>
+      </div>
+
+      <div class="center-box">
         <div class="center-circle"></div>
+      </div>
 
-        <div class="circles top-left"></div>
-        <div class="circles top-right"></div>
-        <div class="circles bottom-left"></div>
-        <div class="circles bottom-right"></div>
-        <div class="circles top-center"></div>
-        <div class="circles bottom-center"></div>
+      <div class="middle-half-circle top-middle-circle"></div>
+      <div class="middle-half-circle bottom-middle-circle"></div>
     </div>
-
-</body>
+  </body>
 </html>
